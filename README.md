@@ -1,7 +1,7 @@
 # Candy Maker API
 
 ## Part One Instructions
-In the initial commit of this project you were provided with the SQL to create a database of candies with their manufacturers. Working in a brach called `part-one-answer`, your task is to implement an Express driven REST API that allows a user to retrieve this data. Your API should support the routes listed below, pulling the data from the database via Sequelize models.
+In the initial commit of this project you were provided with the SQL to create a database of candies with their manufacturers. Working in a branch called `part-one-answer`, your task is to implement an Express driven REST API that allows a user to retrieve this data. Your API should support the routes listed below, pulling the data from the database via Sequelize models.
 
 ## Requests and Expected Respones
 
