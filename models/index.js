@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize')
 const ProductsModel = require('./products')
-const ManufacturersModel = require('./employers')
+const ManufacturersModel = require('./manufacturers')
 
-const connection = new Sequelize('candyman', 'canthecandyman', 'yEs#h3~K4n!', {
+const connection = new Sequelize('candies', 'candies', 'C4nd13$!', {
   host: 'localhost', dialect: 'mysql'
 })
 

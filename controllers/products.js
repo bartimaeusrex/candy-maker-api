@@ -1,5 +1,9 @@
 const models = require('../models')
 
+const getAllProducts = (request, response) => {
+  
+}
+
 const getProductById = async (request, response) => {
   const { id } = request.params
 

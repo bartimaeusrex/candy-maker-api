@@ -1,16 +1,24 @@
+
 const models = require('../models')
 
-const getManufacurerByIdWithProducts = async (request, response) => {
+const getAllManufacturers = (request, response) => {
+  
+}
+
+const getManufacturerByIdWithProducts = async (request, response) => {
   const { id } = request.params
 
-  const manufacurer = await models.Manufacurers.findOne({
+  const manufacturer = await models.Manufacturers.findOne({
     where: { id },
     include: [{ model: models.Products }]
   })
 
-  return manufacurer
-    ? response.send(manufacurer)
+  return manufacturer
+    ? response.send(manufacturer)
     : response.sendStatus(404)
 }
 
-module.exports = { getManufacurerByIdWithProducts }
+module.exports = {
+  getManufacturerByIdWithProducts,
+  getAllManufacturers
+}
