@@ -1,18 +1,19 @@
 const models = require('../models')
 
-const getAllProducts = (request, response) => {
-  
+const getAllProducts = async (request, response) => {
+  const products = await models.Products.findAll({
+    include: [{ model: models.Manufacturers }]
+  })
+
+  return response.send(products)
 }
 
-const getProductById = async (request, response) => {
+const getProductsById = async (request, response) => {
   const { id } = request.params
 
   const product = await models.Products.findOne({
     where: { id },
-    include: [
-      { model: models.Manufacturers },
-      { model: models.Products }
-    ]
+    include: [{ model: models.Manufacturers }]
   })
 
   return product
@@ -20,4 +21,7 @@ const getProductById = async (request, response) => {
     : response.sendStatus(404)
 }
 
-module.exports = { getProductById }
+module.exports = {
+  getAllProducts,
+  getProductsById
+}

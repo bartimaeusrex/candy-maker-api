@@ -1,12 +1,9 @@
-const manufacturers = (connection, Sequelize) => {
-  return connection.define('products', {
+const Manufacturers = (connection, Sequelize) => {
+  return connection.define('manufacturers', {
     id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
-    name: { type: Sequelize.STRING },
+    name: { type: Sequelize.STRING, allowNull: false },
     country: { type: Sequelize.STRING },
-    createdAt: { type: Sequelize.DATETIME },
-    updatedAt: { type: Sequelize.DATETIME },
-    deletedAt: { type: Sequelize.DATETIME }
   }, { paranoid: true })
 }
 
-module.exports = manufacturers
+module.exports = Manufacturers
